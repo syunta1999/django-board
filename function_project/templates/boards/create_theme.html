@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content%}
+<h3>掲示板作成 画面 </h3>
+<p><a class="navbar-brand" href="{% url 'boards:list_themes' %}">掲示板一覧</a></p>
+<form method="POST">
+{% csrf_token %}
+{{ create_theme_form.as_p }}
+<input type="submit" value="作成">
+</form>
+{% endblock %}
